@@ -1,0 +1,25 @@
+const images = {
+  logo: require("./logo.png"),
+  slider: require("./slider.png"),
+  image1: require("./image1.png"),
+  image2: require("./image2.png"),
+  image3: require("./image3.png"),
+  icon1: require("./icon1.png"),
+  icon2: require("./icon2.png"),
+  icon3: require("./icon3.png"),
+  icon4: require("./icon4.png"),
+  human: require("./human.png"),
+  icon_message: require("./icon_message.png"),
+  icon_phone: require("./icon_phone.png"),
+  OSP: require("./OSP.png"),
+  mobifone: require("./mobifone.png"),
+  logo_telegram: require("./logo_telegram.png"),
+  logo_zalo: require("./logo_zalo.png"),
+  logo_fb: require("./logo_fb.png"),
+  logo_twitter: require("./logo_twitter.png"),
+  backTop: require("./backTop.png"),
+  background: require("./background.png"),
+  btnLeft: require("./btn-left.png"),
+};
+
+export default images;
