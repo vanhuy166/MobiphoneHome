@@ -39,12 +39,14 @@ class App extends React.Component {
               kinh doanh và nhiều ưu đãi. Đây cũng là những dịch vụ viễn thông - sản phẩm thông minh tốt nhất hiện nay"
             ></Item1>
           </Section>
+
           <Section title="GÓI CƯỚC DI ĐỘNG" option bgGray>
             <Item2></Item2>
             <Item2></Item2>
             <Item2></Item2>
             <Item2></Item2>
           </Section>
+
           <Section title="SIM SỐ - CHỌN SỐ ONLINE">
             <Item3
               image={images.icon1}
