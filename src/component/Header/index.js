@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import images from "../../assets/image";
 import "./Header.scss";
 
@@ -33,7 +35,7 @@ class Header extends React.Component {
           className={this.state.clickMenu === index ? "active" : ""}
           key={index}
         >
-          <a href="#">{item}</a>
+          <Link to="/">{item}</Link>
         </li>
       );
     });
@@ -53,7 +55,9 @@ class Header extends React.Component {
           </div>
           <div className="header_menu-right">
             <div className="header_menu-right-login">Đăng nhập</div>
-            <div className="header_menu-right-signup">Đăng ký</div>
+            <div className="header_menu-right-signup">
+              <Link to="/register">Đăng ký</Link>
+            </div>
           </div>
         </div>
 
@@ -79,11 +83,11 @@ class Header extends React.Component {
           >
             <ul>
               {listItems}
-              <li className="active1">
+              <li className="active1" onClick={this.handleClickMenuMobile}>
                 <a href="#">Đăng nhập </a>
               </li>
-              <li className="active1">
-                <a href="#">Đăng ký </a>
+              <li className="active1" onClick={this.handleClickMenuMobile}>
+                <Link to="/register">Đăng ký</Link>
               </li>
             </ul>
           </div>

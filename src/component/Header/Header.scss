@@ -245,6 +245,12 @@ $mobile-width: 720px;
         font-weight: 600;
         position: relative;
         cursor: pointer;
+
+        a{
+            color: #1278d2;
+            text-decoration: none;
+        }
+
         &:hover{
             opacity: 0.8;
         }
