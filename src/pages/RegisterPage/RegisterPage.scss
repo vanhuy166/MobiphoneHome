@@ -51,9 +51,6 @@ $mobile-width: 720px;
     --color-black:#000000;
 }
 
-$yellow:#f5ba1a;
-
-
 .clearfix {
 	&:after {
 		content: "";
@@ -74,6 +71,10 @@ $yellow:#f5ba1a;
 	border: 1px solid rgba(0, 0, 0, 0.1);
 	border-top: 5px solid var(--primary-color);
 	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+
+    @include mobile{
+        width: 100%;
+    }
   
 	h2 {
 		font-size: 1.5em;
