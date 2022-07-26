@@ -99,6 +99,11 @@ $yellow:#f5ba1a;
 	.col_half {
 		width: 50%;
 		float: left;
+
+        @include mobile{
+            width: 100%;
+        }
+
 	}
 	.input_field {
 		position: relative;
