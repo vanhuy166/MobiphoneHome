@@ -111,8 +111,8 @@ class RegisterPage extends React.Component {
                 <div className="input_field checkbox_option">
                   <input type="checkbox" id="cb1"></input>
                   <label>
-                    Bạn đồng ý với các <span className="terms">điều khoản</span>{" "}
-                    và <span className="terms">điều kiện</span> của chúng tôi?
+                    Tôi đồng ý với các <span className="terms">điều khoản</span>{" "}
+                    và <span className="terms">điều kiện</span>.
                   </label>
                 </div>
                 <input className="button" type="submit" value="Đăng ký" />

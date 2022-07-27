@@ -43,9 +43,9 @@ class Header extends React.Component {
     return (
       <header className="header">
         <div className="header-logo">
-          <a href="index.html">
+          <Link to="/">
             <img src={images.logo} alt="logo"></img>
-          </a>
+          </Link>
         </div>
 
         {/* Menu PC */}
