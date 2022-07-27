@@ -1,0 +1,298 @@
+ // responsive
+$fix-width: 1440px;
+$menu-width: 1120px;
+$laptop-width: 1400px;
+$surface-width: 912px; 
+// $ipad-width: 820px; 
+$mobile-width: 720px; 
+
+    //laptop
+@mixin laptop { @media (min-width: #{$surface-width + 1px}) and (max-width: #{$laptop-width}) {     
+    @content;   
+    } 
+} 
+
+    // fix
+@mixin fix { @media (min-width: #{$fix-width}) {     
+    @content;   
+    } 
+} 
+
+
+    //menu
+@mixin menu { @media (max-width: #{$menu-width + 1px}) {     
+    @content;   
+    } 
+}   
+
+    // surface pro 7
+@mixin surface { @media (min-width: #{$mobile-width + 1px}) and (max-width: #{$surface-width}) {     
+    @content;   
+   } 
+} 
+    //ipad air
+// @mixin ipad { @media (min-width: #{$mobile-width+ 1px}) and (max-width: #{$ipad-width}) {     
+//     @content;   
+//     }  
+// } 
+    // mobile
+@mixin mobile { @media(max-width: #{$mobile-width + 1px}) {     
+    @content;   
+    }  
+} 
+
+////////////////////////////////////////////////////////////////////
+/* GÓI CƯỚC DI ĐỘNG */
+.content_item-mobile {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 230px;
+    height: 250px;
+    box-shadow: 0px 0px 4px #333;
+    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.25));
+    border-radius: 20px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin: 0 -30px 28px;
+
+    &:hover {
+        transition: all 0.3s;
+        transform: translateY(-4px);
+    }
+
+    @include laptop{
+        margin: 0px auto 28px;
+        width: 40%;
+        height: 300px;
+
+        &:nth-child(3),
+        &:nth-child(4){
+            display: none;
+        }
+    }
+
+
+    @include surface{
+        margin: 0px 40px 28px;
+        width: 35%;
+        height: 300px;
+
+        &:nth-child(3),
+        &:nth-child(4){
+            display: none;
+        }
+    }
+
+    // @include ipad{
+    //     margin: 32px auto ;
+    //     width: 40%;
+    //     height: 300px;
+
+    //     &:nth-child(3),
+    //     &:nth-child(4){
+    //         display: none;
+    //     }
+    // }
+
+    @include mobile{
+        margin: 32px auto;
+        width: 85%;
+        height: 300px;
+
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(4){
+            display: none;
+        }
+    }
+}
+
+.content_item-mobile-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    position: absolute;
+    right: -18px;
+    top: -24px;
+    box-shadow: 0 0 5px #333;
+    z-index: 3;
+    color: var(--text-white);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding-top: 22px;
+    font-size: 12px;
+    font-weight: 600;
+    background: linear-gradient(
+        0deg,
+        #db0020 0.85%,
+        #d40222 0.85%,
+        #c70227 18.84%,
+        #ce032e 28.58%,
+        #dd0032 51.9%,
+        #da052e 84.35%
+    );
+    overflow: hidden;
+    animation: shakeHot 3s;
+    animation-iteration-count: infinite;
+
+    &:after {
+        content: "";
+        width: 34px;
+        height: 10px;
+        top: 38px;
+        right: -8px;
+        position: absolute;
+        border-radius: 50%;
+        background: linear-gradient(317.26deg, #bcbec0 35.96%, #f1f2f2 66.98%);
+        transform: rotate(126deg);
+        box-shadow: rgb(51 51 51) 5px 0px 12px;
+    }
+}
+
+@keyframes shakeHot {
+    0% {
+        transform: scale(2, 2);
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+    10% {
+        transform: scale(2, 2);
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+    20% {
+        transform: scale(2, 2);
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+    30% {
+        transform: scale(2, 2);
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+    40% {
+        transform: scale(2, 2);
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+    50% {
+        transform: scale(2, 2);
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+    60% {
+        transform: scale(2, 2);
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+    70% {
+        transform: scale(2, 2);
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+    80% {
+        transform: scale(2, 2);
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+    90% {
+        transform: scale(2, 2);
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+    100% {
+        transform: scale(2, 2);
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+
+.content_item-mobile-tittle {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-white);
+    position: relative;
+    font-size: 30px;
+    background: linear-gradient(180deg, #0065ff 0%, #166aeb 75.52%, #1062de 100%);
+    z-index: 1;
+    border-radius: 10px;
+    padding-top: 20px;
+    font-weight: 600;
+
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        background-color: #166aeb;
+        width: 100%;
+        height: 69px;
+        border-radius: 50%;
+        bottom: -23px;
+        z-index: -1;
+    }
+}
+
+
+.content_item-mobile-description {
+    flex: 1;
+    width: 80%;
+    padding: 24px 8px 55px;
+
+    p {
+        font-size: 22px;
+        padding: 4px;
+        border-bottom: 1px dotted #333;
+    }
+
+    @include surface{
+        padding-top:40px;
+    }
+
+    // @include ipad{
+    //     padding-top:40px;
+    // }
+
+    @include mobile{
+        padding-top:40px;
+    }
+}
+
+.content_item-mobile-actions {
+    // display:flex;
+    position: absolute;
+    height: 55px;
+    border-radius: 0px 0px 15px 15px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+
+    button {
+        height: 35px;
+        width: 100px;
+        margin: 8px auto;
+        border: 1px solid var(--primary-color);
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 700;
+        background-color: white;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        @include mobile{
+            height: 40px;
+            width: 106px;
+        }
+    }
+
+    .btn-detail {
+        color: var(--primary-color);
+        margin-right: 6px; 
+    }
+    
+    .btn-signup {
+        color: white;
+        background: linear-gradient(180deg, #0065ff 0%, #166aeb 75.52%, #1062de 100%);
+    }
+}
+
+

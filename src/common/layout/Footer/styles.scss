@@ -1,0 +1,169 @@
+// responsive
+$fix-width: 1440px;
+$menu-width: 1120px;
+$laptop-width: 1400px;
+$surface-width: 912px; 
+// $ipad-width: 820px; 
+$mobile-width: 720px; 
+
+    //laptop
+@mixin laptop { @media (min-width: #{$surface-width + 1px}) and (max-width: #{$laptop-width}) {     
+    @content;   
+    } 
+} 
+
+    // fix
+@mixin fix { @media (min-width: #{$fix-width}) {     
+    @content;   
+    } 
+} 
+
+
+    //menu
+@mixin menu { @media (max-width: #{$menu-width + 1px}) {     
+    @content;   
+    } 
+}   
+
+    // surface pro 7
+@mixin surface { @media (min-width: #{$mobile-width + 1px}) and (max-width: #{$surface-width}) {     
+    @content;   
+   } 
+} 
+    //ipad air
+// @mixin ipad { @media (min-width: #{$mobile-width+ 1px}) and (max-width: #{$ipad-width}) {     
+//     @content;   
+//     }  
+// } 
+    // mobile
+@mixin mobile { @media(max-width: #{$mobile-width + 1px}) {     
+    @content;   
+    }  
+} 
+/* footer */
+.footer {
+    width: 100%;
+    text-align: left;
+    padding: 20px 120px;
+    font-size: 18px;
+    position: relative;
+
+    h4 {
+        color: var(--primary-color);
+        font-size: 22px;
+    }
+
+    @include mobile{
+        padding: 20px 36px;
+    }
+
+    // @include ipad{
+    //     padding: 20px 95px;
+    // }
+}
+
+.footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    @include surface{
+        flex-direction: column;
+
+        div{
+            margin-top: 32px;
+        }
+    }
+
+    @include laptop{
+        flex-direction: column;
+
+        div{
+            margin-top: 32px;
+        }
+    }
+
+    // @include ipad{
+    //     flex-direction: column;
+    //     align-items: center;
+    //     text-align: center;
+
+    //     div{
+    //         margin-top: 32px;
+    //         text-align: center;
+    //     }
+    // }
+
+    @include mobile{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        div{
+            margin-top: 32px;
+            text-align: center;
+        }
+    }
+}
+
+.footer-content{
+    display: flex;
+    justify-content: space-around;
+    flex:1;
+
+    @include laptop{
+        justify-content: space-between;
+    }
+
+    @include surface{
+        justify-content: space-between;
+    }
+
+    // @include ipad{
+    //     flex-direction: column;
+    // }
+
+    @include mobile{
+        flex-direction: column;
+    }
+}
+
+.footer-info {
+    margin: 0;
+    text-align: left;
+}
+
+.footer-contact {
+    text-align: left;
+}
+
+.footer-social {
+    p {
+        color: var(--primary-color);
+        margin-top: 10px;
+    }
+}
+
+.footer-social_item img {
+    width: 30px;
+    height: 30px;
+    margin: 20px 10px 8px 0;
+    cursor: pointer;
+}
+
+.footer-copyright {
+    font-size: 14px;
+    margin: 8px 0;
+    text-align:center
+}
+
+.footer-btnTop {
+    position: absolute;
+    top: 22px;
+    right: 115px;
+    cursor: pointer;
+
+    @include mobile{
+        top: 10px;
+        right: 10px;
+    }
+}

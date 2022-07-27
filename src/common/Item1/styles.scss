@@ -1,0 +1,100 @@
+ // responsive
+$fix-width: 1440px;
+$menu-width: 1120px;
+$laptop-width: 1400px;
+$surface-width: 912px; 
+// $ipad-width: 820px; 
+$mobile-width: 720px; 
+
+    //laptop
+@mixin laptop { @media (min-width: #{$surface-width + 1px}) and (max-width: #{$laptop-width}) {     
+    @content;   
+    } 
+} 
+
+    // fix
+@mixin fix { @media (min-width: #{$fix-width}) {     
+    @content;   
+    } 
+} 
+
+
+    //menu
+@mixin menu { @media (max-width: #{$menu-width + 1px}) {     
+    @content;   
+    } 
+}   
+
+    // surface pro 7
+@mixin surface { @media (min-width: #{$mobile-width + 1px}) and (max-width: #{$surface-width}) {     
+    @content;   
+   } 
+} 
+    //ipad air
+// @mixin ipad { @media (min-width: #{$mobile-width+ 1px}) and (max-width: #{$ipad-width}) {     
+//     @content;   
+//     }  
+// } 
+    // mobile
+@mixin mobile { @media(max-width: #{$mobile-width + 1px}) {     
+    @content;   
+    }  
+} 
+
+
+////////////////////////////////////////////////////////////////////
+// CHƯƠNG TRÌNH AFFILIATE
+.content_item {
+    width: 275px;
+    margin: 0 12px;
+    text-align: center;
+
+    &:hover .content_item-image {
+        animation: rotateImg 2s infinite;
+    }
+
+    @include laptop{
+        width: 256px;
+        margin: 8px auto;
+    }
+
+    @include surface{
+        width: 256px;
+        margin: 8px auto;
+    }
+
+    // @include ipad{
+    //     width: 256px;
+    //     margin: 8px auto;
+    // }
+
+    @include mobile{
+        width: 328px;
+        margin: 29px auto;
+    }
+}
+
+.content_item-image {
+    width: 220px;
+    height: 220px;
+    transition: all 5s ease;
+}
+
+@keyframes rotateImg {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+.content_item-tittle {
+    font-size: 23px;
+    color: var(--primary-color);
+    margin: 10px 0;
+}
+
+.content_item-description {
+    text-align: justify;    
+}
