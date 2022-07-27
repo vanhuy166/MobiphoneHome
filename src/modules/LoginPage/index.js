@@ -2,12 +2,7 @@ import React from "react";
 import "./assets/css/styles.scss";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faEnvelope,
-  faLock,
-  faPhone,
-  faUser,
-} from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
 
 class LoginPage extends React.Component {
   render() {

@@ -3,7 +3,7 @@ import "./styles.scss";
 
 class Item1 extends React.Component {
   constructor(props) {
-    super(props);
+    super();
     this.state = {};
   }
   render() {
