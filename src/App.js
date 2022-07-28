@@ -1,6 +1,5 @@
 import "./App.scss";
 import React from "react";
-// import { default as React, Fragment } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import { publicRoutes } from "./routes/combineRoutes";

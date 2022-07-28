@@ -138,6 +138,9 @@ $mobile-width: 720px;
                 text-decoration: none;
                 line-height: 40px;
                 font-size: 20px;
+                display: block;
+                outline: none;
+                border:none;
             }
 
             &.active,
@@ -145,7 +148,7 @@ $mobile-width: 720px;
                 background: var(--primary-background-color);
                 a{
                     color: var(--text-white);
-                     border-bottom: 2px solid var(--text-white);
+                    //  border-bottom: 2px solid var(--text-white);
                 }
             }
 
@@ -226,6 +229,11 @@ $mobile-width: 720px;
     margin-right: 10px;
     padding: 0 10px;
 
+    a{
+        color: #1278d2;
+        text-decoration: none;
+    }
+
     div{
         height: 100%;
         display: flex;
@@ -236,11 +244,6 @@ $mobile-width: 720px;
         font-weight: 600;
         position: relative;
         cursor: pointer;
-
-        a{
-            color: #1278d2;
-            text-decoration: none;
-        }
 
         &:hover{
             opacity: 0.8;

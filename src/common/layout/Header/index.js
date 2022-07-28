@@ -56,12 +56,12 @@ class Header extends React.Component {
             <ul>{listItems}</ul>
           </div>
           <div className="header_menu-right">
-            <div className="header_menu-right-login">
-              <Link to="/login">Đăng nhập</Link>
-            </div>
-            <div className="header_menu-right-signup">
-              <Link to="/register">Đăng ký</Link>
-            </div>
+            <Link to="/login">
+              <div className="header_menu-right-login">Đăng nhập</div>
+            </Link>
+            <Link to="/register">
+              <div className="header_menu-right-signup">Đăng ký</div>
+            </Link>
           </div>
         </div>
 
