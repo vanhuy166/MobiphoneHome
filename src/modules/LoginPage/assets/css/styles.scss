@@ -114,6 +114,20 @@ $mobile-width: 720px;
 			text-align: center;
 			width: 30px;
 		}
+
+        >.icon_pw{
+            position: absolute;
+            right: 4px;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 32px;
+            color: #8f8e8e;
+            font-size: 18px;
+            cursor: pointer;
+        }  
 	}
 	.textarea_field {
 		>span {
