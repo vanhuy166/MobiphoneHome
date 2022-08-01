@@ -13,7 +13,6 @@ import {
 class LoginPage extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = { user: {}, userName: "", password: "", authenticated: null };
     this.state = {
       userName: "",
       password: "",
@@ -51,7 +50,6 @@ class LoginPage extends React.Component {
 
   componentDidMount() {
     this.checkAuthentication();
-    // this.setState({ user: JSON.parse(window.localStorage.getItem("user")) });
   }
 
   handleSubmit = (e) => {
@@ -135,9 +133,7 @@ class LoginPage extends React.Component {
                     <label htmlFor="cb1">Nhớ mật khẩu</label>
                     <label className="terms">Quên mật khẩu?</label>
                   </div>
-                  {/* <Link to="/"> */}
                   <input className="button" type="submit" value="Đăng Nhập" />
-                  {/* </Link> */}
                 </form>
               </div>
             </div>
