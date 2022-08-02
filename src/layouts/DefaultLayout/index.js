@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { Header, Footer } from "../../../common";
+import { Header, Footer } from "../../layouts";
 
 import "./styles.scss";
 
-import images from "../../../assets/images";
+import images from "../../assets/images";
 
 class DefaultLayout extends Component {
   constructor(props) {

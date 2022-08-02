@@ -1,6 +1,5 @@
 import React from "react";
 import "./assets/css/styles.scss";
-// import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -9,6 +8,8 @@ import {
   faEyeSlash,
   faLock,
 } from "@fortawesome/free-solid-svg-icons";
+
+import * as loginService from "./api";
 
 class LoginPage extends React.Component {
   constructor(props) {
@@ -29,42 +30,24 @@ class LoginPage extends React.Component {
     }
   }
 
-  async checkLogin() {
-    const response = await fetch(
-      "https://adm.dgtt.ospgroup.vn/dgtt-admin/account-managers/login",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json; charset=utf-8",
-        },
-        body: JSON.stringify({
-          pwd: this.state.password,
-          typeUsername: 0,
-          uname: this.state.userName,
-        }),
-      }
-    );
-
-    return response.json();
-  }
-
   componentDidMount() {
     this.checkAuthentication();
   }
 
-  handleSubmit = (e) => {
+  handleSubmit = async (e) => {
     e.preventDefault();
-    this.checkLogin().then((data) => {
-      console.log(data);
-      if (data.status === 200 || data.status === 201) {
-        // alert(data.message);
-        window.localStorage.setItem("authenticated", this.state.authenticated);
-        window.localStorage.setItem("token", data.body.accessToken);
-        window.location.href = "/";
-      } else {
-        alert(data.message);
-      }
-    });
+    const data = await loginService.login(
+      this.state.userName,
+      this.state.password
+    );
+    console.log(data);
+    if (data) {
+      window.localStorage.setItem("authenticated", this.state.authenticated);
+      window.localStorage.setItem("token", data.body.accessToken);
+      window.location.href = "/";
+    } else {
+      alert("Đăng nhập thất bại! Vui lòng kiểm tra thông tin đăng nhập.");
+    }
   };
 
   handleChangeUser = (event) => {

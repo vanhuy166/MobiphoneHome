@@ -1,7 +1,7 @@
 import React from "react";
 import "./assets/css/styles.scss";
 
-import { Section, Item1, Item2, Item3 } from "../../common";
+import { Section, Item1, Item2, Item3 } from "./components";
 import images from "../../assets/images";
 
 // component, purecom

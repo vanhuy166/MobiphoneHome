@@ -6,6 +6,16 @@ class Item2 extends React.Component {
     super(props);
     this.state = {};
   }
+
+  handleCheckUser = () => {
+    if (localStorage.getItem("token")) {
+      window.location.href = "/details";
+    } else {
+      alert("Bạn chưa đăng nhập! Vui lòng đăng nhập.");
+      window.location.href = "/login";
+    }
+  };
+
   render() {
     return (
       <div className="content_item-mobile">
@@ -19,7 +29,9 @@ class Item2 extends React.Component {
         </div>
         <div className="content_item-mobile-actions">
           <button className="btn-detail">Xem chi tiết</button>
-          <button className="btn-signup">Đăng ký</button>
+          <button className="btn-signup" onClick={this.handleCheckUser}>
+            Đăng ký
+          </button>
         </div>
       </div>
     );
