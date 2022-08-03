@@ -127,28 +127,25 @@ $mobile-width: 720px;
     }
 
     ul{
-       list-style :none; 
-       
-       li {
+        list-style :none; 
+        
+        li {
             height: 100%;
-            padding: 6px;
 
             a {
                 color: var(--text-hover);
                 text-decoration: none;
                 line-height: 40px;
                 font-size: 20px;
+                padding: 6px;
                 display: block;
                 outline: none;
                 border:none;
-            }
-
-            &.active,
-            &:hover{
-                background: var(--primary-background-color);
-                a{
+                
+                &.active,
+                &:hover{
                     color: var(--text-white);
-                    //  border-bottom: 2px solid var(--text-white);
+                    background:var(--primary-background-color)
                 }
             }
 
@@ -158,12 +155,17 @@ $mobile-width: 720px;
                 background-color: rgb(240, 235, 235);
                 color: var(--text-hover);
                 text-decoration: none;
-                line-height: 40px;
+                line-height: 50px;
                 font-size: 20px;
                 display: block;
                 outline: none;
                 border: none;
+                cursor: pointer;
                 border-top: 1px solid var(--primary-color);
+                &:hover{
+                    color: var(--text-white);
+                    background:var(--primary-background-color)
+                }
             }
             
             &:nth-child(7){
@@ -207,21 +209,22 @@ $mobile-width: 720px;
             display: inline-block;
             height: 100%;
             padding: 0 6px;
+            margin-right: 4px; 
 
             a {
                 text-decoration: none;
                 color: var(--text-white);
                 line-height: 40px;
                 font-size: 20px;
-            }
 
-            &.active,
-            &:hover{
-                a{
+                &.active,
+                &:hover{
                     color: var(--text-hover);
                     border-bottom: 2px solid var(--text-hover);
                 }
             }
+
+            
         }
     }
 
@@ -288,7 +291,7 @@ $mobile-width: 720px;
     .sub-menu{
         display: none;
         position: absolute;
-        bottom: -105px;
+        bottom: -256%;
         background-color: var(--text-white);
         width: 120%;
         border-radius: 10px;
@@ -296,9 +299,12 @@ $mobile-width: 720px;
         z-index: 10;
         overflow: hidden;
 
-        li{
-            line-height:30px;
+        a{
+            display: block;
+            line-height:30px; 
             padding: 10px;
+
+            &.active,
             &:hover{
                 background: var(--primary-background-color);
                 color: var(--text-white)
