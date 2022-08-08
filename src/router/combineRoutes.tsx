@@ -1,1 +1,1 @@
-export { default as publicRoutes } from "./publicRoute.js";
+export { default as publicRoutes } from "./publicRoute";
