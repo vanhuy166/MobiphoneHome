@@ -9,10 +9,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 function Header() {
-  const [mobile, setMobile] = useState(false);
-  const [token, setToken] = useState(localStorage.getItem("token"));
+  const [mobile, setMobile] = useState<boolean>(false);
+  const [token, setToken] = useState<string|null>(localStorage.getItem("token"));
 
-  const navigate = useNavigate();
+  const navigate:any = useNavigate();
 
   const handleClickMenuMobile = () => {
     setMobile(!mobile);
@@ -25,7 +25,7 @@ function Header() {
     navigate("/");
   };
 
-  const listMenuItems = (
+  const listMenuItems: React.ReactNode = (
     <>
       <li onClick={handleClickMenuMobile}>
         <NavLink to={"/"}>Trang chủ</NavLink>

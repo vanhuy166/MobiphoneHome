@@ -1,7 +1,14 @@
 import React from "react";
 import "./styles.scss";
 
-function Item3(props) {
+interface Iprops{
+  active:  boolean,
+  image: string,
+  title: string,
+  description: string
+}
+
+function Item3(props:Iprops) {
   return (
     <div className={props.active ? "content_item3 active" : "content_item3"}>
       <img className="content_item3-image" src={props.image} alt=""></img>

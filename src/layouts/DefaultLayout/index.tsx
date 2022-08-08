@@ -1,11 +1,15 @@
 import React from "react";
-import { Header, Footer } from "../../layouts";
+import { Header, Footer } from "..";
 
 import "./styles.scss";
 
 import images from "../../assets/images";
 
-function DefaultLayout(props) {
+interface Iprops {
+  children?: React.ReactNode ;
+}
+
+function DefaultLayout(props:Iprops) {
   return (
     <>
       <Header></Header>

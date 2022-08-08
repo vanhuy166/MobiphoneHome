@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./styles.scss";
 
-function Item2(props) {
+function Item2() {
   const navigate = useNavigate();
 
   const handleCheckUser = () => {

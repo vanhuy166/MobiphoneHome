@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
-import "./assets/css/styles.scss";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEnvelope,
@@ -11,16 +8,18 @@ import {
   faLock,
 } from "@fortawesome/free-solid-svg-icons";
 
+import "./assets/css/styles.scss";
 import * as loginService from "./api";
 
-function LoginPage(props) {
-  const navigate = useNavigate();
 
-  const [userName, setUserName] = useState("");
-  const [password, setPassword] = useState("");
-  const [authenticated, setAuthenticated] = useState(null);
-  const [showPass, setShowPass] = useState(false);
-  const [typeInput, setTypeInput] = useState("password");
+function LoginPage() {
+  const navigate:any = useNavigate();
+
+  const [userName, setUserName] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [authenticated, setAuthenticated] = useState<boolean>(false);
+  const [showPass, setShowPass] = useState<boolean>(false);
+  const [typeInput, setTypeInput] = useState<string>("password");
 
   useEffect(() => {
     const auth = true;
@@ -31,12 +30,12 @@ function LoginPage(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e:any) => {
     e.preventDefault();
     const data = await loginService.login(userName, password);
     console.log(data);
     if (data) {
-      window.localStorage.setItem("authenticated", authenticated);
+      window.localStorage.setItem("authenticated", authenticated.toString());
       window.localStorage.setItem(
         "token",
         JSON.stringify(data.body.accessToken)
@@ -47,12 +46,12 @@ function LoginPage(props) {
     }
   };
 
-  const handleChangeUser = (event) => {
-    setUserName(event.target.value);
+  const handleChangeUser = (e:any) => {
+    setUserName(e.target.value);
   };
 
-  const handleChangePass = (event) => {
-    setPassword(event.target.value);
+  const handleChangePass = (e:any) => {
+    setPassword(e.target.value);
   };
 
   const handleShowPass = () => {

@@ -11,6 +11,8 @@ function HomePage() {
       <Section
         title="CHƯƠNG TRÌNH AFFILIATE"
         description="Tham gia kiếm tiền cùng Cộng tác viên MobiFone"
+        option={false}
+        bgGray={false}
       >
         <Item1
           image={images.image1}
@@ -33,27 +35,30 @@ function HomePage() {
         ></Item1>
       </Section>
 
-      <Section title="GÓI CƯỚC DI ĐỘNG" option bgGray>
+      <Section title="GÓI CƯỚC DI ĐỘNG" description="" option bgGray>
         <Item2></Item2>
         <Item2></Item2>
         <Item2></Item2>
         <Item2></Item2>
       </Section>
 
-      <Section title="SIM SỐ - CHỌN SỐ ONLINE">
+      <Section title="SIM SỐ - CHỌN SỐ ONLINE" description="" option={false} bgGray={false}>
         <Item3
+          active={false}
           image={images.icon1}
           title="Sim theo tên"
           description="Kho sim số đẹp từ website chonso.mobifone.vn với hàng triệu sim số đẹp cho bạn lựa chọn, 
               giá cả hấp dẫn, hỗ trợ giao sim miễn phí tại nhà,...."
         ></Item3>
         <Item3
+          active={false}
           image={images.icon2}
           title="Sim số đẹp"
           description="Kho sim số đẹp từ website chonso.mobifone.vn với hàng triệu sim số đẹp cho bạn lựa chọn, 
             giá cả hấp dẫn, hỗ trợ giao sim miễn phí tại nhà,...."
         ></Item3>
         <Item3
+          active={false}
           image={images.icon3}
           title="Sim phong thủy"
           description="Kho sim số đẹp từ website chonso.mobifone.vn với hàng triệu sim số đẹp cho bạn lựa chọn, 

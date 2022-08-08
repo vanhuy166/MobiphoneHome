@@ -1,7 +1,13 @@
 import React from "react";
 import "./styles.scss";
 
-function Item1(props) {
+interface Iprops {
+  image: string,
+  title: string, 
+  description: string
+}
+
+function Item1(props:Iprops) {
   return (
     <div className="content_item">
       <img className="content_item-image" src={props.image} alt=""></img>

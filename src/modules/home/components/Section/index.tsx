@@ -1,13 +1,22 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
-import "./styles.scss";
 
+import "./styles.scss";
 import images from "../../../../assets/images";
 
-function Section(props) {
-  const [option, setOption] = useState(0);
+interface Iprops{
+  bgGray:  boolean,
+  title: string,
+  description: string,
+  option:  boolean,
+  children: React.ReactNode,
+}
 
-  const handleOption = (index) => {
+
+function Section(props:Iprops) {
+
+  const [option, setOption] = useState<number>(0);
+
+  const handleOption = (index:number) => {
     setOption(index);
   };
 
@@ -30,7 +39,6 @@ function Section(props) {
                   <button
                     key={index}
                     onClick={() => handleOption(index)}
-                    to=""
                     className={
                       option === index
                         ? "section-option-item active"

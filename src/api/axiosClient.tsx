@@ -5,12 +5,12 @@ const request = axios.create({
   // baseURL: "https://adm.dgtt.ospgroup.vn/dgtt-admin"
 });
 
-export const get = async (path) => {
+export const get = async (path:string) => {
   const res = await request.get(path);
   return res.data;
 };
 
-export const post = async (path, data, headers) => {
+export const post = async (path:string, data:object, headers:object) => {
   const res = await request.post(path, data, headers);
   return res.data;
 };
