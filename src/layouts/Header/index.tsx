@@ -10,9 +10,9 @@ import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 function Header() {
   const [mobile, setMobile] = useState<boolean>(false);
-  const [token, setToken] = useState<string|null>(localStorage.getItem("token"));
+  const [token, setToken] = useState<string | null>(localStorage.getItem("token"));
 
-  const navigate:any = useNavigate();
+  const navigate = useNavigate();
 
   const handleClickMenuMobile = () => {
     setMobile(!mobile);
@@ -25,7 +25,7 @@ function Header() {
     navigate("/");
   };
 
-  const listMenuItems: React.ReactNode = (
+  const listMenuItems: JSX.Element = (
     <>
       <li onClick={handleClickMenuMobile}>
         <NavLink to={"/"}>Trang chủ</NavLink>

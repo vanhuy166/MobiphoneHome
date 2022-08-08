@@ -13,7 +13,7 @@ import * as loginService from "./api";
 
 
 function LoginPage() {
-  const navigate:any = useNavigate();
+  const navigate = useNavigate();
 
   const [userName, setUserName] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -30,7 +30,7 @@ function LoginPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const handleSubmit = async (e:any) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
     const data = await loginService.login(userName, password);
     console.log(data);
@@ -46,11 +46,11 @@ function LoginPage() {
     }
   };
 
-  const handleChangeUser = (e:any) => {
+  const handleChangeUser = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setUserName(e.target.value);
   };
 
-  const handleChangePass = (e:any) => {
+  const handleChangePass = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setPassword(e.target.value);
   };
 

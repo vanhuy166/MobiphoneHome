@@ -6,10 +6,10 @@ import "./styles.scss";
 import images from "../../assets/images";
 
 interface Iprops {
-  children?: React.ReactNode ;
+  children?: React.ReactNode;
 }
 
-function DefaultLayout(props:Iprops) {
+function DefaultLayout(props: Iprops) {
   return (
     <>
       <Header></Header>

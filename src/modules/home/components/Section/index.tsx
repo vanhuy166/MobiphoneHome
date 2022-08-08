@@ -3,20 +3,20 @@ import React, { useState } from "react";
 import "./styles.scss";
 import images from "../../../../assets/images";
 
-interface Iprops{
-  bgGray:  boolean,
+interface Iprops {
+  bgGray: boolean,
   title: string,
   description: string,
-  option:  boolean,
+  option: boolean,
   children: React.ReactNode,
 }
 
 
-function Section(props:Iprops) {
+function Section(props: Iprops) {
 
   const [option, setOption] = useState<number>(0);
 
-  const handleOption = (index:number) => {
+  const handleOption = (index: number) => {
     setOption(index);
   };
 
