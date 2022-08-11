@@ -10,7 +10,13 @@ const initialState = {
   error: null,
 };
 
-const userReducers = (state = initialState, action) => {
+
+interface actionType {
+  type: string,
+  payload: any
+}
+
+const userReducers = (state = initialState, action: actionType) => {
   switch (action.type) {
     case FETCH_USER:
       console.log(FETCH_USER);

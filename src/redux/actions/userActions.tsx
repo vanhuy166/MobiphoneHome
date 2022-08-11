@@ -5,6 +5,10 @@ import {
 } from "../constants/userConstants";
 
 import request from "../../api/axiosClient";
+interface userType {
+  userName: string,
+  password: string
+}
 
 export const loginAction = () => {
   return {
@@ -12,21 +16,21 @@ export const loginAction = () => {
   };
 };
 
-export const loginActionSuccess = (user) => {
+export const loginActionSuccess = (user: userType) => {
   return {
     type: FETCH_USER_SUCCESS,
     payload: user,
   };
 };
 
-export const loginActionFailure = (errorMessage) => {
+export const loginActionFailure = (errorMessage: any) => {
   return {
     type: FETCH_USER_FAILED,
     payload: errorMessage,
   };
 };
 
-export const getLogin = async (user, dispatch) => {
+export const getLogin = async (user: userType, dispatch: any) => {
   console.log(user);
   try {
     dispatch(loginAction());
@@ -44,7 +48,7 @@ export const getLogin = async (user, dispatch) => {
           },
         }
       )
-      .then((res) => {
+      .then((res: any) => {
         window.localStorage.setItem(
           "token",
           JSON.stringify(res.data.body.accessToken)
