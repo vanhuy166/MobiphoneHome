@@ -1,12 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import "./styles.scss";
-
-import images from "../../assets/images";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
+
+import "./styles.scss";
+import images from "../../assets/images";
 
 function Header() {
   const [mobile, setMobile] = useState<boolean>(false);

@@ -1,6 +1,6 @@
 import * as request from "../../../api/axiosClient";
 
-export const login = async (uname:string, pwd:string) => {
+export const login = async (uname: string, pwd: string) => {
   try {
     const res = await request.post(
       "/account-managers/login",

@@ -9,7 +9,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import "./assets/css/styles.scss";
-import * as loginService from "./api";
+// import * as loginService from "./api";
+import { useDispatch } from "react-redux";
+import { getLogin } from "../../redux/actions/userActions"
 
 
 function LoginPage() {
@@ -21,29 +23,40 @@ function LoginPage() {
   const [showPass, setShowPass] = useState<boolean>(false);
   const [typeInput, setTypeInput] = useState<string>("password");
 
+  // const test = useSelector(state => state);
+  const dispatch = useDispatch();
+
+
+
   useEffect(() => {
     const auth = true;
     if (auth !== authenticated) {
       setAuthenticated(auth);
-      console.log("set authenticated");
     }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
-    const data = await loginService.login(userName, password);
-    console.log(data);
-    if (data) {
-      window.localStorage.setItem("authenticated", authenticated.toString());
-      window.localStorage.setItem(
-        "token",
-        JSON.stringify(data.body.accessToken)
-      );
+    // const data = await loginService.login(userName, password);
+    // console.log(data);
+    // if (data) {
+    // window.localStorage.setItem("authenticated", authenticated.toString());
+    // window.localStorage.setItem(
+    //   "token",
+    //   JSON.stringify(data.body.accessToken)
+    // );
+    //   navigate('/')
+    // } else {
+    //   alert("Đăng nhập thất bại! Vui lòng kiểm tra thông tin đăng nhập.");
+    // }
+
+    const login = await getLogin({ userName, password }, dispatch);
+    if (login) {
       navigate("/");
-    } else {
-      alert("Đăng nhập thất bại! Vui lòng kiểm tra thông tin đăng nhập.");
     }
+
   };
 
   const handleChangeUser = (e: React.ChangeEvent<HTMLInputElement>): void => {
