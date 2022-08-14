@@ -24,7 +24,7 @@ function Header() {
     localStorage.removeItem("token");
     setToken(null);
     handleClickMenuMobile();
-    dispatch(userLogout);
+    dispatch(userLogout());
     navigate("/");
   };
 
