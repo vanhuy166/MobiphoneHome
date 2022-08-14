@@ -16,7 +16,7 @@ export const login = async (uname: string, pwd: string) => {
       }
     );
     return res;
-  } catch (error) {
-    console.log(error);
+  } catch (error: any) {
+    console.log("err: ", error.message);
   }
 };

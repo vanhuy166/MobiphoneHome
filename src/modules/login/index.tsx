@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { ThunkDispatch } from "redux-thunk";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -9,10 +11,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import "./assets/css/styles.scss";
-// import * as loginService from "./api";
-import { useDispatch } from "react-redux";
-import { getLogin } from "../../redux/actions/userActions"
-
+import { fetchUserLogin } from '../../redux/slices/userSlice'
+// import { getLogin } from "../../redux/actions/userActions"
 
 function LoginPage() {
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ function LoginPage() {
   const [typeInput, setTypeInput] = useState<string>("password");
 
   // const test = useSelector(state => state);
-  const dispatch = useDispatch();
+  const dispatch: ThunkDispatch<any, any, any> = useDispatch();
 
 
 
@@ -39,23 +39,18 @@ function LoginPage() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
-    // const data = await loginService.login(userName, password);
-    // console.log(data);
-    // if (data) {
-    // window.localStorage.setItem("authenticated", authenticated.toString());
-    // window.localStorage.setItem(
-    //   "token",
-    //   JSON.stringify(data.body.accessToken)
-    // );
-    //   navigate('/')
-    // } else {
-    //   alert("Đăng nhập thất bại! Vui lòng kiểm tra thông tin đăng nhập.");
-    // }
 
-    const login = await getLogin({ userName, password }, dispatch);
-    if (login) {
-      navigate("/");
-    }
+    dispatch(fetchUserLogin({ userName, password })).then((res) => {
+      // console.log("res: ", res)
+      if (res.payload) {
+        navigate("/");
+      }
+      else {
+        alert("Đăng nhập thất bại! Vui lòng kiểm tra thông tin đăng nhập.");
+      }
+    }).catch((err) => {
+      console.log("err: ", err, err.code);
+    });
 
   };
 

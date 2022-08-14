@@ -1,17 +1,20 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from "react";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 import "./styles.scss";
 import images from "../../assets/images";
+import { userLogout } from "../../redux/slices/userSlice";
 
 function Header() {
   const [mobile, setMobile] = useState<boolean>(false);
   const [token, setToken] = useState<string | null>(localStorage.getItem("token"));
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleClickMenuMobile = () => {
     setMobile(!mobile);
@@ -21,6 +24,7 @@ function Header() {
     localStorage.removeItem("token");
     setToken(null);
     handleClickMenuMobile();
+    dispatch(userLogout);
     navigate("/");
   };
 
